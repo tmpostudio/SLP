@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap">
-<link rel="stylesheet" href="/assets/css/site.css?v=9ea80fda">
+<link rel="stylesheet" href="/assets/css/site.css?v=868445c6">
 <script>
   document.documentElement.classList.add('js');
   if (document.prerendering) {
@@ -29,7 +29,7 @@
     document.addEventListener('prerenderingchange', () => document.documentElement.classList.remove('is-prerendering'), { once: true });
   }
 </script>
-<script src="/assets/js/site.js?v=9ea80fda" defer></script>
+<script src="/assets/js/site.js?v=868445c6" defer></script>
 <script type="speculationrules">
   { "prerender": [{ "where": { "href_matches": "/*" }, "eagerness": "moderate" }] }
 </script>
@@ -58,6 +58,7 @@
   "employee": { "@type": "Person", "name": "Chase Nickel", "jobTitle": "Pharmacist & Owner" },
   "makesOffer": [
     { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Free Prescription Delivery" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Rapid Strep Testing" } },
     { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Health & Wellness Products" } },
     { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Compounding" } },
     { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Blister Packaging" } },
@@ -86,7 +87,7 @@
       </ul>
       <div class="nav__actions">
         <a class="btn btn--outline btn--sm" href="/order-online/"><span class="btn__label">Order Online</span></a>
-        <a class="btn btn--solid btn--sm" href="https://www.avee.health" target="_blank" rel="noopener"><span class="btn__label">Book an Appt</span></a>
+        <a class="btn btn--solid btn--sm" href="https://www.avee.health" target="_blank" rel="noopener"><span class="btn__label">Book online doctor appt</span></a>
       </div>
       <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-drawer" aria-label="Open menu" data-nav-toggle>
         <span class="nav__toggle-line"></span>
@@ -102,7 +103,7 @@
           <li><a href="#contact">Talk to Us</a></li>
         </ul>
         <div class="nav__drawer-actions">
-          <a class="btn btn--solid" href="https://www.avee.health" target="_blank" rel="noopener"><span class="btn__label">Book an Appt</span></a>
+          <a class="btn btn--solid" href="https://www.avee.health" target="_blank" rel="noopener"><span class="btn__label">Book an online doctor appointment</span></a>
           <a class="btn btn--outline" href="tel:+12504224262"><span class="btn__label">Call 250-422-4262</span></a>
         </div>
       </div>
@@ -161,10 +162,10 @@
       <div class="contact-row">
         <svg class="icon contact-row__icon" width="24" height="24" aria-hidden="true"><use href="/assets/img/icons.svg#calendar"></use></svg>
         <div class="contact-row__text">
-          <p class="contact-row__label">Appointments</p>
+          <p class="contact-row__label">Online doctor appointments</p>
           <p>Book online with Avee</p>
         </div>
-        <a class="btn btn--outline btn--sm" href="https://www.avee.health" target="_blank" rel="noopener" aria-label="Book an appointment with Avee"><span class="btn__label">Book</span></a>
+        <a class="btn btn--outline btn--sm" href="https://www.avee.health" target="_blank" rel="noopener" aria-label="Book an online doctor appointment with Avee"><span class="btn__label">Book</span></a>
       </div>
     </address>
   </div>

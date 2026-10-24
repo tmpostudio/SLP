@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Skaha Lake Pharmacy | Independent Pharmacy in Penticton, BC</title>
-<meta name="description" content="Independent community pharmacy on Skaha Lake Road in Penticton, BC. Free prescription delivery, compounding, blister packs, immunizations, minor ailment prescribing and online refills.">
+<meta name="description" content="Independent community pharmacy on Skaha Lake Road in Penticton, BC. Free prescription delivery, rapid strep testing, minor ailment prescribing, compounding, blister packs and immunizations.">
 <meta property="og:title" content="Skaha Lake Pharmacy | Independent Pharmacy in Penticton, BC">
 <meta property="og:description" content="Personal, accessible care from an independent pharmacy on Skaha Lake Road. Free prescription delivery and online refills.">
 <!-- @include head -->
@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap">
-<link rel="stylesheet" href="./assets/css/site.css?v=9ea80fda">
+<link rel="stylesheet" href="./assets/css/site.css?v=868445c6">
 <script>
   document.documentElement.classList.add('js');
   if (document.prerendering) {
@@ -30,7 +30,7 @@
     document.addEventListener('prerenderingchange', () => document.documentElement.classList.remove('is-prerendering'), { once: true });
   }
 </script>
-<script src="./assets/js/site.js?v=9ea80fda" defer></script>
+<script src="./assets/js/site.js?v=868445c6" defer></script>
 <script type="speculationrules">
   { "prerender": [{ "where": { "href_matches": "/*" }, "eagerness": "moderate" }] }
 </script>
@@ -59,6 +59,7 @@
   "employee": { "@type": "Person", "name": "Chase Nickel", "jobTitle": "Pharmacist & Owner" },
   "makesOffer": [
     { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Free Prescription Delivery" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Rapid Strep Testing" } },
     { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Health & Wellness Products" } },
     { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Compounding" } },
     { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Blister Packaging" } },
@@ -87,7 +88,7 @@
       </ul>
       <div class="nav__actions">
         <a class="btn btn--outline btn--sm" href="./order-online/"><span class="btn__label">Order Online</span></a>
-        <a class="btn btn--solid btn--sm" href="https://www.avee.health" target="_blank" rel="noopener"><span class="btn__label">Book an Appt</span></a>
+        <a class="btn btn--solid btn--sm" href="https://www.avee.health" target="_blank" rel="noopener"><span class="btn__label">Book online doctor appt</span></a>
       </div>
       <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-drawer" aria-label="Open menu" data-nav-toggle>
         <span class="nav__toggle-line"></span>
@@ -103,7 +104,7 @@
           <li><a href="#contact">Talk to Us</a></li>
         </ul>
         <div class="nav__drawer-actions">
-          <a class="btn btn--solid" href="https://www.avee.health" target="_blank" rel="noopener"><span class="btn__label">Book an Appt</span></a>
+          <a class="btn btn--solid" href="https://www.avee.health" target="_blank" rel="noopener"><span class="btn__label">Book an online doctor appointment</span></a>
           <a class="btn btn--outline" href="tel:+12504224262"><span class="btn__label">Call 250-422-4262</span></a>
         </div>
       </div>
@@ -115,15 +116,16 @@
 <main class="main" id="main">
   <section class="hero" aria-labelledby="hero-title">
     <div class="hero__content">
-      <p class="brow" data-load>An independent pharmacy in Penticton</p>
-      <h1 class="h1" id="hero-title" data-load style="--d:1">Empower your health journey</h1>
-      <p class="lead" data-load style="--d:2">Serving Penticton with care, continuity, and an independent community approach.</p>
-      <div class="cta-row" data-load style="--d:3">
+      <img class="hero__logo" src="./assets/img/logo.svg" width="300" height="117" alt="Skaha Lake Pharmacy" data-load data-hero-logo>
+      <p class="brow" data-load style="--d:1">An independent pharmacy in Penticton</p>
+      <h1 class="h1" id="hero-title" data-load style="--d:2">Empower your health journey</h1>
+      <p class="lead" data-load style="--d:3">Serving Penticton with care, continuity, and an independent community approach.</p>
+      <div class="cta-row" data-load style="--d:4">
         <a class="btn btn--primary" href="./order-online/">
           Order Online
           <span class="btn__circle"><svg class="arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8H13M9 12L13 8L9 4"/></svg></span>
         </a>
-        <a class="btn btn--outline btn--soft" href="https://www.avee.health" target="_blank" rel="noopener"><span class="btn__label">Book an Appt</span></a>
+        <a class="btn btn--outline btn--soft" href="https://www.avee.health" target="_blank" rel="noopener"><span class="btn__label">Book online doctor appt</span></a>
       </div>
     </div>
     <figure class="hero__media" data-load-media>
@@ -157,8 +159,8 @@
   <section class="services band band--white" id="services" aria-labelledby="services-title">
     <header class="section-head">
       <p class="brow" data-reveal>Our services</p>
-      <h2 class="h2" id="services-title" data-reveal>Welcome to a New Era of Pharmacy Care</h2>
-      <p class="lead" data-reveal>Discover a pharmacy experience that prioritizes your wellness with precision and care.</p>
+      <h2 class="h2" id="services-title" data-reveal>Welcome to Skaha Lake Pharmacy</h2>
+      <p class="lead" data-reveal>Discover a pharmacy that puts patient care first.</p>
     </header>
     <ul class="service-grid" role="list">
       <li class="service" data-reveal>
@@ -167,9 +169,9 @@
         <p>We offer free prescription delivery to help make managing your medications as convenient as possible. Whether you’re at home, busy with work, or simply unable to make it into the pharmacy, our team can bring your prescriptions directly to you.</p>
       </li>
       <li class="service" data-reveal>
-        <span class="service__icon"><svg class="icon" width="36" height="36" aria-hidden="true"><use href="./assets/img/icons.svg#wellness"></use></svg></span>
-        <h3 class="h3">Health &amp; Wellness</h3>
-        <p>We offer a carefully selected range of health and wellness products, including premium vitamin and supplement brands such as Genestra and Pure Encapsulations. We focus on trusted products made with high-quality ingredients, and our pharmacists are available to help you choose options that fit your individual health needs.</p>
+        <span class="service__icon"><svg class="icon" width="36" height="36" aria-hidden="true"><use href="./assets/img/icons.svg#strep"></use></svg></span>
+        <h3 class="h3">Rapid Strep Testing</h3>
+        <p>Do you think you have strep throat? We can help by performing a rapid strep throat test to determine if you’re positive or negative. If you’re positive, we can get you in touch with our online doctors to help you get a prescription as soon as possible.</p>
       </li>
       <li class="service" data-reveal>
         <span class="service__icon"><svg class="icon" width="36" height="36" aria-hidden="true"><use href="./assets/img/icons.svg#compounding"></use></svg></span>
@@ -182,9 +184,14 @@
         <p>Our blister packaging service makes it easier to organize and manage multiple medications. Each dose is conveniently packaged by date and time, helping simplify medication routines and reduce the risk of missed or incorrect doses.</p>
       </li>
       <li class="service" data-reveal>
+        <span class="service__icon"><svg class="icon" width="36" height="36" aria-hidden="true"><use href="./assets/img/icons.svg#wellness"></use></svg></span>
+        <h3 class="h3">Health &amp; Wellness</h3>
+        <p>We offer a carefully selected range of health and wellness products, including premium vitamin and supplement brands such as Genestra and Pure Encapsulations. We focus on trusted products made with high-quality ingredients, and our pharmacists are available to help you choose options that fit your individual health needs.</p>
+      </li>
+      <li class="service" data-reveal>
         <span class="service__icon"><svg class="icon" width="36" height="36" aria-hidden="true"><use href="./assets/img/icons.svg#ailment"></use></svg></span>
         <h3 class="h3">Minor Ailment Prescribing</h3>
-        <p>Our pharmacists can assess and prescribe treatment for a range of eligible minor ailments. We provide convenient access to care, personalized recommendations, and appropriate treatment without the need for a physician appointment in many situations.</p>
+        <p>Our pharmacists can assess and prescribe treatment for a range of eligible minor ailments, such as UTIs, pink eye, cold sores, and more. We provide convenient access to care, personalized recommendations, and appropriate treatment without the need for a physician appointment in many situations.</p>
       </li>
       <li class="service" data-reveal>
         <span class="service__icon"><svg class="icon" width="36" height="36" aria-hidden="true"><use href="./assets/img/icons.svg#immunization"></use></svg></span>
@@ -198,7 +205,7 @@
       </li>
       <li class="service service--cta" data-reveal>
         <a class="tile-link" href="https://www.avee.health" target="_blank" rel="noopener">
-          <span class="h3">Book an appointment</span>
+          <span class="h3">Book an online doctor appointment</span>
           <span class="tile-arrow"><svg class="arrow" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M3.75 10H16.25M11.25 15L16.25 10L11.25 5"/></svg></span>
         </a>
       </li>
@@ -241,10 +248,10 @@
       <div class="contact-row">
         <svg class="icon contact-row__icon" width="24" height="24" aria-hidden="true"><use href="./assets/img/icons.svg#calendar"></use></svg>
         <div class="contact-row__text">
-          <p class="contact-row__label">Appointments</p>
+          <p class="contact-row__label">Online doctor appointments</p>
           <p>Book online with Avee</p>
         </div>
-        <a class="btn btn--outline btn--sm" href="https://www.avee.health" target="_blank" rel="noopener" aria-label="Book an appointment with Avee"><span class="btn__label">Book</span></a>
+        <a class="btn btn--outline btn--sm" href="https://www.avee.health" target="_blank" rel="noopener" aria-label="Book an online doctor appointment with Avee"><span class="btn__label">Book</span></a>
       </div>
     </address>
   </div>
