@@ -1,0 +1,43 @@
+<!doctype html>
+<!-- Social share image template. Render at 1200x630:
+     "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new --hide-scrollbars \
+       --window-size=1200,630 --screenshot=og.png tools/og.html -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&display=swap">
+<style>
+  html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    display: grid;
+    grid-template-columns: 1fr 430px;
+    gap: 56px;
+    align-items: center;
+    padding: 56px 64px;
+    box-sizing: border-box;
+    background: #f2f6fa;
+    font-family: Inter, sans-serif;
+    font-optical-sizing: auto;
+    color: #14204a;
+    position: relative;
+  }
+  .logo { width: 190px; margin-bottom: 56px; }
+  .brow { font-size: 18px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #3b6f9e; margin: 0 0 18px; }
+  h1 { font-size: 64px; line-height: 1.08; font-weight: 500; letter-spacing: -0.025em; margin: 0 0 24px; }
+  h1 span { color: #5990bf; }
+  p { font-size: 24px; line-height: 1.4; color: #3a476f; margin: 0; }
+  .photo { width: 430px; height: 518px; border-radius: 32px; object-fit: cover; object-position: 50% 46%; }
+  .disc { position: absolute; right: -120px; bottom: -220px; width: 520px; height: 520px; border-radius: 50%; border: 1px solid #a9c6e0; z-index: -1; }
+</style>
+</head>
+<body>
+  <span class="disc"></span>
+  <div>
+    <img class="logo" src="../public/assets/img/logo.svg" alt="">
+    <p class="brow">Independent pharmacy · Penticton, BC</p>
+    <h1>Personal, <span>accessible</span> care</h1>
+    <p>Free prescription delivery and online refills.<br>103-3115 Skaha Lake Rd</p>
+  </div>
+  <img class="photo" src="../public/assets/img/skaha-lake-pharmacy-storefront.jpg" alt="">
+</body>
+</html>

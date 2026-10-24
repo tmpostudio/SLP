@@ -1,0 +1,7 @@
+.DS_Store
+
+# Local editor/agent settings
+.claude/
+
+# Raw Figma exports and working copies (the site uses public/assets/)
+/assets/

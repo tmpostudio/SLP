@@ -1,0 +1,36 @@
+<header class="site-header" data-header>
+  <nav class="nav" aria-label="Main" data-nav>
+    <div class="nav__bar">
+      <a class="nav__logo" href="{{root}}" aria-label="Skaha Lake Pharmacy home">
+        <img src="{{root}}assets/img/logo.svg" width="112" height="44" alt="Skaha Lake Pharmacy">
+      </a>
+      <ul class="nav__links" role="list">
+        <li><a class="nav__link" href="{{root}}#services">Services</a></li>
+        <li><a class="nav__link" href="{{root}}about/"{{current:about}}>About</a></li>
+        <li><a class="nav__link" href="#contact">Talk to Us</a></li>
+      </ul>
+      <div class="nav__actions">
+        <a class="btn btn--outline btn--sm" href="{{root}}order-online/"{{current:order}}><span class="btn__label">Order Online</span></a>
+        <a class="btn btn--solid btn--sm" href="https://www.avee.health" target="_blank" rel="noopener"><span class="btn__label">Book an Appt</span></a>
+      </div>
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-drawer" aria-label="Open menu" data-nav-toggle>
+        <span class="nav__toggle-line"></span>
+        <span class="nav__toggle-line"></span>
+      </button>
+    </div>
+    <div class="nav__drawer" id="nav-drawer" data-nav-drawer>
+      <div class="nav__drawer-inner">
+        <ul class="nav__drawer-links" role="list">
+          <li><a href="{{root}}#services">Services</a></li>
+          <li><a href="{{root}}about/"{{current:about}}>About</a></li>
+          <li><a href="{{root}}order-online/"{{current:order}}>Order Online</a></li>
+          <li><a href="#contact">Talk to Us</a></li>
+        </ul>
+        <div class="nav__drawer-actions">
+          <a class="btn btn--solid" href="https://www.avee.health" target="_blank" rel="noopener"><span class="btn__label">Book an Appt</span></a>
+          <a class="btn btn--outline" href="tel:+12504224262"><span class="btn__label">Call 250-422-4262</span></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>

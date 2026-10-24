@@ -1,0 +1,66 @@
+<meta name="theme-color" content="#F2F6FA">
+<meta name="format-detection" content="telephone=no">
+<meta name="geo.region" content="CA-BC">
+<meta name="geo.placename" content="Penticton">
+<link rel="canonical" href="{{pageUrl}}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Skaha Lake Pharmacy">
+<meta property="og:locale" content="en_CA">
+<meta property="og:url" content="{{pageUrl}}">
+<meta property="og:image" content="{{siteUrl}}assets/img/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="{{root}}favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="{{root}}apple-touch-icon.png">
+<link rel="manifest" href="{{root}}site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap">
+<link rel="stylesheet" href="{{root}}assets/css/site.css?v={{v}}">
+<script>
+  document.documentElement.classList.add('js');
+  if (document.prerendering) {
+    document.documentElement.classList.add('is-prerendering');
+    document.addEventListener('prerenderingchange', () => document.documentElement.classList.remove('is-prerendering'), { once: true });
+  }
+</script>
+<script src="{{root}}assets/js/site.js?v={{v}}" defer></script>
+<script type="speculationrules">
+  { "prerender": [{ "where": { "href_matches": "/*" }, "eagerness": "moderate" }] }
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Pharmacy",
+  "name": "Skaha Lake Pharmacy",
+  "description": "Independent community pharmacy in Penticton, BC offering free prescription delivery, custom compounding, blister packaging, minor ailment prescribing, immunizations and private consultations.",
+  "url": "{{siteUrl}}",
+  "image": "{{siteUrl}}assets/img/skaha-lake-pharmacy-storefront.jpg",
+  "logo": "{{siteUrl}}assets/img/logo.svg",
+  "telephone": "+1-250-422-4262",
+  "faxNumber": "+1-250-422-4253",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "103-3115 Skaha Lake Rd",
+    "addressLocality": "Penticton",
+    "addressRegion": "BC",
+    "postalCode": "V2A 6G5",
+    "addressCountry": "CA"
+  },
+  "hasMap": "https://www.google.com/maps/search/?api=1&query=3115+Skaha+Lake+Rd+Penticton+BC+V2A+6G5",
+  "areaServed": { "@type": "City", "name": "Penticton" },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:30", "closes": "17:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "13:00" }
+  ],
+  "employee": { "@type": "Person", "name": "Chase Nickel", "jobTitle": "Pharmacist & Owner" },
+  "makesOffer": [
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Free Prescription Delivery" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Health & Wellness Products" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Compounding" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Blister Packaging" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Minor Ailment Prescribing" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Immunizations & Injections" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Private Consultations" } }
+  ]
+}
+</script>

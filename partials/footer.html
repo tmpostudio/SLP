@@ -1,0 +1,55 @@
+<footer class="footer band band--white" id="contact">
+  <div class="footer__contact">
+    <div class="footer__intro">
+      <h2 class="h2 footer__title">Reach Us</h2>
+      <div class="hours" data-hours>
+        <p class="hours__status" data-open-status hidden><span class="status-dot" aria-hidden="true"></span><span data-open-text></span></p>
+        <dl class="hours__list">
+          <div class="hours__row" data-days="1,2,3,4,5"><dt>Monday – Friday</dt><dd>8:30 am – 5:00 pm</dd></div>
+          <div class="hours__row" data-days="6"><dt>Saturday</dt><dd>9:00 am – 1:00 pm</dd></div>
+          <div class="hours__row" data-days="0"><dt>Sunday &amp; holidays</dt><dd>Closed</dd></div>
+        </dl>
+      </div>
+    </div>
+    <address class="contact-rows">
+      <div class="contact-row">
+        <svg class="icon contact-row__icon" width="24" height="24" aria-hidden="true"><use href="{{root}}assets/img/icons.svg#phone"></use></svg>
+        <div class="contact-row__text">
+          <p class="contact-row__label">Phone</p>
+          <p>Ph: <a class="link" href="tel:+12504224262">250-422-4262</a></p>
+          <p>Fax: 250-422-4253</p>
+        </div>
+        <a class="btn btn--outline btn--sm" href="tel:+12504224262" aria-label="Call Skaha Lake Pharmacy"><span class="btn__label">Call</span></a>
+      </div>
+      <div class="contact-row">
+        <svg class="icon contact-row__icon" width="24" height="24" aria-hidden="true"><use href="{{root}}assets/img/icons.svg#location"></use></svg>
+        <div class="contact-row__text">
+          <p class="contact-row__label">Location</p>
+          <p>103-3115 Skaha Lake Rd<br>Penticton, BC V2A 6G5</p>
+        </div>
+        <a class="btn btn--outline btn--sm" href="https://www.google.com/maps/search/?api=1&amp;query=3115+Skaha+Lake+Rd+Penticton+BC+V2A+6G5" target="_blank" rel="noopener" aria-label="Open directions in Google Maps"><span class="btn__label">Maps</span></a>
+      </div>
+      <div class="contact-row">
+        <svg class="icon contact-row__icon" width="24" height="24" aria-hidden="true"><use href="{{root}}assets/img/icons.svg#calendar"></use></svg>
+        <div class="contact-row__text">
+          <p class="contact-row__label">Appointments</p>
+          <p>Book online with Avee</p>
+        </div>
+        <a class="btn btn--outline btn--sm" href="https://www.avee.health" target="_blank" rel="noopener" aria-label="Book an appointment with Avee"><span class="btn__label">Book</span></a>
+      </div>
+    </address>
+  </div>
+  <div class="footer__bar">
+    <div class="footer__brand">
+      <a class="footer__logo" href="{{root}}" aria-label="Skaha Lake Pharmacy home">
+        <img src="{{root}}assets/img/logo.svg" width="123" height="48" alt="Skaha Lake Pharmacy" loading="lazy">
+      </a>
+      <p class="footer__copy">© <span data-year>{{year}}</span> Skaha Lake Pharmacy</p>
+    </div>
+    <ul class="footer__links" role="list">
+      <li><a class="link" href="{{root}}about/">About</a></li>
+      <li><a class="link" href="{{root}}order-online/">Order Online</a></li>
+      <li><a class="link" href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</footer>
