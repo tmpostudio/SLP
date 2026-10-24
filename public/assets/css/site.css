@@ -720,6 +720,11 @@ ol[role="list"] {
   gap: 20px;
 }
 
+.hero__content .brow {
+  font-size: 12px;
+  line-height: 16px;
+}
+
 .hero__content .lead { max-width: 512px; }
 .hero__content .cta-row { padding-top: 20px; }
 
