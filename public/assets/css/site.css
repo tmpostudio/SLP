@@ -1445,21 +1445,27 @@ ol[role="list"] {
   .video__play:hover svg { transform: scale(1.08); }
 }
 
+/* Centred with inset + auto margins (not translate), so fullscreen isn't offset */
 .video iframe {
   position: absolute;
-  left: 50%;
-  top: 50%;
+  inset: 0;
   z-index: 2;
+  width: auto;
   height: 100%;
   max-width: 100%;
+  margin: auto;
   aspect-ratio: 16 / 9;
   border: 0;
-  translate: -50% -50%;
   opacity: 0;
   transition: opacity 0.6s ease 0.2s;
 }
 
 .video.is-playing iframe { opacity: 1; }
+
+.video iframe:fullscreen {
+  translate: none;
+  aspect-ratio: auto;
+}
 
 .video.is-playing .video__play,
 .video.is-playing .video__caption {
