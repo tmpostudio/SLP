@@ -723,10 +723,10 @@ ol[role="list"] {
 .hero__content .lead { max-width: 512px; }
 .hero__content .cta-row { padding-top: 20px; }
 
+/* Frame matches the entrance photo (5:4) so nothing is cropped */
 .hero__media {
   position: relative;
-  align-self: stretch;
-  min-height: 404px;
+  aspect-ratio: 5 / 4;
   border-radius: var(--r-card);
   overflow: hidden;
   background: var(--blue-100);
@@ -736,7 +736,6 @@ ol[role="list"] {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 50% 46%;
 }
 
 .status-chip {
@@ -796,10 +795,6 @@ ol[role="list"] {
 
   .hero__content .cta-row { padding-top: 8px; }
 
-  .hero__media {
-    min-height: 0;
-    aspect-ratio: 5 / 4;
-  }
 }
 
 /* Home: story band
@@ -808,7 +803,8 @@ ol[role="list"] {
 .story-band {
   --disc: clamp(300px, 27vw, 380px);
   display: grid;
-  grid-template-columns: minmax(calc(var(--disc) + 40px), 1fr) minmax(0, 700px);
+  grid-template-columns: minmax(var(--disc), 1fr) minmax(0, 700px);
+  column-gap: clamp(64px, 6.5vw, 104px);
   align-items: center;
   min-height: 446px;
   padding: 64px 80px;
@@ -944,7 +940,7 @@ ol[role="list"] {
 
 @keyframes ripple {
   0% { transform: scale(0.43); opacity: 0; }
-  8% { opacity: 1; }
+  8% { opacity: 0.5; }
   100% { transform: scale(1); opacity: 0; }
 }
 
@@ -984,7 +980,7 @@ ol[role="list"] {
   .story-band {
     --disc: min(300px, 100vw - 96px);
     grid-template-columns: 1fr;
-    gap: 44px;
+    gap: 64px;
     min-height: 0;
     padding: 64px 24px 40px;
   }
@@ -1290,7 +1286,7 @@ ol[role="list"] {
 }
 
 .story__photo {
-  aspect-ratio: 440 / 600;
+  aspect-ratio: 4 / 5;
   border-radius: 32px;
   overflow: hidden;
   background: var(--blue-100);
@@ -1367,10 +1363,6 @@ ol[role="list"] {
     gap: 16px;
   }
 
-  .story__photo {
-    max-height: 520px;
-    aspect-ratio: 4 / 5;
-  }
 
   .callout { padding: 22px 24px; }
 }
@@ -2057,7 +2049,7 @@ ol[role="list"] {
   .js [data-reveal]:not(.is-in) { opacity: 1; }
 
   /* Still rings in place of the ripple */
-  .ripples circle { animation: none; opacity: 0.85; }
+  .ripples circle { animation: none; opacity: 0.5; }
   .ripples circle:nth-child(1) { transform: scale(0.53); }
   .ripples circle:nth-child(2) { transform: scale(0.75); }
   .ripples circle:nth-child(3) { transform: scale(0.97); }
