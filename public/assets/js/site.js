@@ -10,16 +10,6 @@
     window.addEventListener('scroll', onScroll, { passive: true });
   }
 
-  /* Home: reveal the nav logo once the big hero logo scrolls under the header */
-  const heroLogo = document.querySelector('[data-hero-logo]');
-  if (header && heroLogo && 'IntersectionObserver' in window) {
-    header.classList.add('has-hero-logo');
-    new IntersectionObserver(
-      ([entry]) => header.classList.toggle('show-logo', !entry.isIntersecting),
-      { rootMargin: '-96px 0px 0px 0px' }
-    ).observe(heroLogo);
-  }
-
   /* Mobile menu ------------------------------------------------------------ */
   const nav = document.querySelector('[data-nav]');
   const toggle = document.querySelector('[data-nav-toggle]');
