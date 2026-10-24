@@ -934,15 +934,17 @@ ol[role="list"] {
   transform-box: fill-box;
   transform-origin: center;
   opacity: 0;
-  animation: ripple 13.5s cubic-bezier(0.22, 0.55, 0.35, 1) infinite;
+  animation: ripple 6s linear infinite;
 }
 
-.ripples circle:nth-child(2) { animation-delay: -4.5s; }
-.ripples circle:nth-child(3) { animation-delay: -9s; }
+/* Four rings, evenly staggered, so a new ripple leaves the photo every 1.5s */
+.ripples circle:nth-child(2) { animation-delay: -1.5s; }
+.ripples circle:nth-child(3) { animation-delay: -3s; }
+.ripples circle:nth-child(4) { animation-delay: -4.5s; }
 
 @keyframes ripple {
   0% { transform: scale(0.43); opacity: 0; }
-  12% { opacity: 0.95; }
+  8% { opacity: 1; }
   100% { transform: scale(1); opacity: 0; }
 }
 
@@ -2059,6 +2061,7 @@ ol[role="list"] {
   .ripples circle:nth-child(1) { transform: scale(0.53); }
   .ripples circle:nth-child(2) { transform: scale(0.75); }
   .ripples circle:nth-child(3) { transform: scale(0.97); }
+  .ripples circle:nth-child(4) { display: none; }
 
   ::view-transition-group(*),
   ::view-transition-old(*),
