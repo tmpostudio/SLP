@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap">
-<link rel="stylesheet" href="./assets/css/site.css?v=534a4cd0">
+<link rel="stylesheet" href="./assets/css/site.css?v=364b8921">
 <script>
   document.documentElement.classList.add('js');
   if (document.prerendering) {
@@ -30,7 +30,7 @@
     document.addEventListener('prerenderingchange', () => document.documentElement.classList.remove('is-prerendering'), { once: true });
   }
 </script>
-<script src="./assets/js/site.js?v=534a4cd0" defer></script>
+<script src="./assets/js/site.js?v=364b8921" defer></script>
 <script type="speculationrules">
   { "prerender": [{ "where": { "href_matches": "/*" }, "eagerness": "moderate" }] }
 </script>
@@ -135,11 +135,11 @@
 
   <section class="story-band band band--blue" aria-labelledby="story-title">
     <div class="story-band__visual" data-inview>
-      <div class="rings" aria-hidden="true">
-        <img class="ring ring--700" src="./assets/img/ring-700.svg" width="700" height="700" alt="">
-        <img class="ring ring--540" src="./assets/img/ring-540.svg" width="540" height="540" alt="">
-        <img class="ring ring--380" src="./assets/img/ring-380.svg" width="380" height="380" alt="">
-      </div>
+      <svg class="ripples" viewBox="0 0 100 100" aria-hidden="true">
+        <circle cx="50" cy="50" r="50"/>
+        <circle cx="50" cy="50" r="50"/>
+        <circle cx="50" cy="50" r="50"/>
+      </svg>
       <div class="story-band__disc">
         <img class="story-band__photo" src="./assets/img/skaha-lake-penticton.png" width="600" height="600" alt="Calm morning on Skaha Lake, Penticton" loading="lazy">
         <img class="story-band__logo" src="./assets/img/logo-white.svg" width="300" height="117" alt="Skaha Lake Pharmacy">

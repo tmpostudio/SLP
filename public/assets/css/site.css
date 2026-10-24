@@ -794,13 +794,7 @@ ol[role="list"] {
     padding: 36px 8px 0;
   }
 
-  .hero__content .cta-row {
-    align-self: stretch;
-    padding-top: 8px;
-  }
-
-  .hero__content .cta-row .btn { flex: 1 1 auto; }
-  .hero__content .btn--primary { justify-content: space-between; }
+  .hero__content .cta-row { padding-top: 8px; }
 
   .hero__media {
     min-height: 0;
@@ -843,8 +837,8 @@ ol[role="list"] {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: blur(3px);
-  transform: scale(1.1);
+  filter: blur(5px);
+  transform: scale(1.14);
   transition: transform 1.6s var(--ease-out);
 }
 
@@ -871,7 +865,7 @@ ol[role="list"] {
 }
 
 @media (hover: hover) {
-  .story-band__disc:hover .story-band__photo { transform: scale(1.15); }
+  .story-band__disc:hover .story-band__photo { transform: scale(1.19); }
 }
 
 .story-band__content {
@@ -916,6 +910,43 @@ ol[role="list"] {
 
 .is-in .ring--540 { animation-delay: 0.15s, 2.6s; }
 .is-in .ring--700 { animation-delay: 0.3s, 3.4s; }
+
+/* Home: rings ripple outward from the lake photo, slow and continuous.
+   Non-scaling strokes keep every ring a hairline as it grows. */
+.ripples {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: calc(var(--disc) * 2.4);
+  height: calc(var(--disc) * 2.4);
+  max-width: none;
+  overflow: visible;
+  translate: -50% -50%;
+  pointer-events: none;
+  transition: opacity 1.6s var(--ease-out);
+}
+
+.ripples circle {
+  fill: none;
+  stroke: var(--blue-300);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+  transform-box: fill-box;
+  transform-origin: center;
+  opacity: 0;
+  animation: ripple 13.5s cubic-bezier(0.22, 0.55, 0.35, 1) infinite;
+}
+
+.ripples circle:nth-child(2) { animation-delay: -4.5s; }
+.ripples circle:nth-child(3) { animation-delay: -9s; }
+
+@keyframes ripple {
+  0% { transform: scale(0.43); opacity: 0; }
+  12% { opacity: 0.95; }
+  100% { transform: scale(1); opacity: 0; }
+}
+
+.js [data-inview]:not(.is-in) .ripples { opacity: 0; }
 
 .js [data-inview] .story-band__disc {
   opacity: 0;
@@ -2022,6 +2053,12 @@ ol[role="list"] {
   }
 
   .js [data-reveal]:not(.is-in) { opacity: 1; }
+
+  /* Still rings in place of the ripple */
+  .ripples circle { animation: none; opacity: 0.85; }
+  .ripples circle:nth-child(1) { transform: scale(0.53); }
+  .ripples circle:nth-child(2) { transform: scale(0.75); }
+  .ripples circle:nth-child(3) { transform: scale(0.97); }
 
   ::view-transition-group(*),
   ::view-transition-old(*),
