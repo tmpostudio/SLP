@@ -1,5 +1,5 @@
 {
-  "siteUrl": "",
+  "siteUrl": "https://skahalakepharmacy.ca",
   "pages": [
     { "file": "index.html", "key": "home", "path": "" },
     { "file": "about/index.html", "key": "about", "path": "about/" },
