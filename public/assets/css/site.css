@@ -500,7 +500,12 @@ ol[role="list"] {
   transition: opacity 0.25s ease, transform 0.4s var(--ease-out);
 }
 
-.nav__logo img { width: 112px; }
+/* Optical centre: the heavy wordmark fills the top of the logo's box and the
+   light waves barely register below it, so true centre reads as riding high */
+.nav__logo img {
+  width: 112px;
+  transform: translateY(7%);
+}
 
 @media (hover: hover) {
   .nav__logo:hover { opacity: 0.82; }
@@ -565,7 +570,7 @@ ol[role="list"] {
   .nav__bar {
     grid-template-columns: 1fr auto;
     min-height: 60px;
-    padding: 8px 8px 8px 20px;
+    padding: 8px 8px 8px 28px;
   }
 
   .nav__logo img { width: 92px; }
@@ -729,7 +734,6 @@ ol[role="list"] {
 }
 
 .hero__content .lead { max-width: 512px; }
-.hero__content .cta-row { padding-top: 20px; }
 
 /* Frame matches the entrance photo (5:4) so nothing is cropped */
 .hero__media {
@@ -800,9 +804,6 @@ ol[role="list"] {
     min-height: 0;
     padding: 36px 8px 0;
   }
-
-  .hero__content .cta-row { padding-top: 8px; }
-
 }
 
 /* Home: story band
