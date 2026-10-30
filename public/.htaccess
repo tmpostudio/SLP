@@ -4,12 +4,12 @@ Options -Indexes
 DirectoryIndex index.html
 ErrorDocument 404 /404.html
 
-# Once SSL is active on the domain, uncomment to force HTTPS.
-# <IfModule mod_rewrite.c>
-#   RewriteEngine On
-#   RewriteCond %{HTTPS} off
-#   RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-# </IfModule>
+# Force HTTPS (SSL confirmed working on the live host)
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} off
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
 
 <IfModule mod_mime.c>
   AddType image/svg+xml .svg
@@ -36,4 +36,14 @@ ErrorDocument 404 /404.html
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
   Header always set X-Frame-Options "SAMEORIGIN"
   Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+
+  # Content Security Policy: only this site, Google Fonts and the YouTube player may load.
+  # The sha256 hashes cover the two small inline scripts in partials/head.html and are
+  # refreshed automatically by `node tools/build.mjs`. Don't edit them by hand.
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'sha256-hSlEJy5hs+DitVjFs/V0D3rZZ59lfKVrep5gALg18sM=' 'sha256-GZWvYmcQXziD7e1VDU0W6d/tNExbNY7LXxsSaWvW4YY='; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; frame-src https://www.youtube-nocookie.com; connect-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'"
+
+  # HSTS: browsers will only use HTTPS for this domain for the next year.
+  # Subdomains are left out on purpose; add "; includeSubDomains" only once every
+  # subdomain (mail., cpanel., etc.) is confirmed to have SSL too.
+  Header always set Strict-Transport-Security "max-age=31536000"
 </IfModule>

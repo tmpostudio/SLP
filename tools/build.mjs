@@ -50,6 +50,8 @@ function render(template, page) {
     .replace(/\{\{(\w+)\}\}/g, (_, key) => vars[key] ?? '');
 }
 
+const inlineScriptHashes = new Set();
+
 for (const page of config.pages) {
   const file = join(pub, page.file);
   const html = readFileSync(file, 'utf8').replace(
@@ -58,7 +60,22 @@ for (const page of config.pages) {
   );
   writeFileSync(file, html);
   console.log('synced', page.file);
+
+  // Executable inline scripts (JSON-LD is data, so the CSP ignores it)
+  for (const [, attrs, body] of html.matchAll(/<script([^>]*)>([\s\S]*?)<\/script>/g)) {
+    if (/\bsrc=|application\/ld\+json/.test(attrs)) continue;
+    inlineScriptHashes.add(`'sha256-${createHash('sha256').update(body).digest('base64')}'`);
+  }
 }
+
+// Keep the CSP in .htaccess in step with the inline scripts above
+const htaccess = join(pub, '.htaccess');
+const scriptSrc = `script-src 'self' ${[...inlineScriptHashes].join(' ')};`;
+writeFileSync(
+  htaccess,
+  readFileSync(htaccess, 'utf8').replace(/(Content-Security-Policy "[^"\n]*?)script-src [^;"\n]*;/, `$1${scriptSrc}`)
+);
+console.log(`CSP: ${inlineScriptHashes.size} inline script hashes`);
 
 const robots = join(pub, 'robots.txt');
 const sitemap = join(pub, 'sitemap.xml');

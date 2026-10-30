@@ -335,6 +335,7 @@ ol[role="list"] {
   flex: none;
   width: 32px;
   height: 32px;
+  aspect-ratio: 1;
   border-radius: 50%;
   background: var(--white);
   color: var(--navy-800);
@@ -578,8 +579,10 @@ ol[role="list"] {
     position: relative;
     display: grid;
     place-items: center;
+    flex: none;
     width: 44px;
     height: 44px;
+    aspect-ratio: 1;
     padding: 0;
     border: 0;
     border-radius: 50%;
@@ -1120,8 +1123,10 @@ ol[role="list"] {
 .tile-arrow {
   display: grid;
   place-items: center;
+  flex: none;
   width: 48px;
   height: 48px;
+  aspect-ratio: 1;
   border-radius: 50%;
   background: var(--white);
   color: var(--navy-800);
@@ -1178,7 +1183,11 @@ ol[role="list"] {
   .service { padding: 24px 4px; gap: 14px; border-radius: 0; }
   .service + .service:not(.service--cta) { border-top: 1px solid var(--blue-100); }
   .service__icon::before { display: none; }
-  .service.service--cta { margin-top: 12px; border-radius: var(--r-card); }
+  .service.service--cta {
+    margin-top: 12px;
+    padding: 0;
+    border-radius: var(--r-card);
+  }
   .tile-link { min-height: 112px; padding: 24px; }
 }
 
@@ -1476,8 +1485,10 @@ ol[role="list"] {
   position: relative;
   display: grid;
   place-items: center;
+  flex: none;
   width: 104px;
   height: 104px;
+  aspect-ratio: 1;
   padding: 0;
   border: 0;
   border-radius: 50%;
@@ -1596,8 +1607,10 @@ ol[role="list"] {
   z-index: 1;
   display: grid;
   place-items: center;
+  flex: none;
   width: 52px;
   height: 52px;
+  aspect-ratio: 1;
   border-radius: 50%;
   background: var(--navy-800);
   color: var(--white);
@@ -1984,6 +1997,11 @@ ol[role="list"] {
   animation: rise 1s var(--ease-out) both;
   animation-delay: calc(var(--d, 0) * 90ms + 60ms);
 }
+
+/* Stagger order (data attributes, not inline styles, so the CSP can stay strict) */
+[data-load="1"] { --d: 1; }
+[data-load="2"] { --d: 2; }
+[data-load="3"] { --d: 3; }
 
 .js [data-load-media] {
   animation: media-in 1.3s var(--ease-out) 0.2s both;

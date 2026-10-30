@@ -42,8 +42,15 @@ Put the live domain in `site.config.json`:
 
 Then run `node tools/build.mjs`. This adds canonical tags, absolute share-image URLs, the schema `url`, and a `sitemap.xml`. Then:
 
-- Uncomment the HTTPS redirect in `public/.htaccess` once SSL is active.
+- HTTPS is on: `public/.htaccess` redirects all `http://` traffic to `https://` and sends HSTS (one year, main domain only). If the host ever shows "too many redirects", the server is likely behind a proxy that hides HTTPS from Apache. Ask the host which variable to check instead of `%{HTTPS}`.
 - Submit `sitemap.xml` in Google Search Console.
+
+### Security headers
+
+`public/.htaccess` sends a strict Content Security Policy. The site may only load its own files, Google Fonts and the YouTube player.
+
+- The two small inline scripts in `partials/head.html` are allowed by hash. `node tools/build.mjs` recomputes those hashes every run, so always rebuild after editing the head partial.
+- Don't add inline `style="…"` attributes or new third-party scripts without updating the policy, or the browser will block them.
 
 ### Opening hours
 
