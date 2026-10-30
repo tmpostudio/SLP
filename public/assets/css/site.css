@@ -564,8 +564,7 @@ ol[role="list"] {
   display: none;
 }
 
-/* The three nav buttons need about 1280px; below that, use the menu */
-@media (max-width: 1279px) {
+@media (max-width: 1023px) {
   :root { --header-offset: 92px; }
 
   .nav { border-radius: 28px; }

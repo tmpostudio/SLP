@@ -33,7 +33,7 @@
     document.addEventListener('click', (e) => {
       if (nav.classList.contains('is-open') && !nav.contains(e.target)) setOpen(false);
     });
-    window.matchMedia('(min-width: 1280px)').addEventListener('change', (e) => e.matches && setOpen(false));
+    window.matchMedia('(min-width: 1024px)').addEventListener('change', (e) => e.matches && setOpen(false));
   }
 
   /* Reveal on scroll ------------------------------------------------------- */
