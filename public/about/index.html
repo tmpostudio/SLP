@@ -25,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap">
-<link rel="stylesheet" href="../assets/css/site.css?v=c0565055">
+<link rel="stylesheet" href="../assets/css/site.css?v=5db14437">
 <script>
   document.documentElement.classList.add('js');
   if (document.prerendering) {
@@ -33,7 +33,7 @@
     document.addEventListener('prerenderingchange', () => document.documentElement.classList.remove('is-prerendering'), { once: true });
   }
 </script>
-<script src="../assets/js/site.js?v=c0565055" defer></script>
+<script src="../assets/js/site.js?v=5db14437" defer></script>
 <script type="speculationrules">
   { "prerender": [{ "where": { "href_matches": "/*" }, "eagerness": "moderate" }] }
 </script>
@@ -199,6 +199,23 @@
           <p>Fax: 250-422-4253</p>
         </div>
         <a class="btn btn--outline btn--sm" href="tel:+12504224262" aria-label="Call Skaha Lake Pharmacy"><span class="btn__label">Call</span></a>
+      </div>
+      <div class="contact-row">
+        <svg class="icon contact-row__icon" width="24" height="24" aria-hidden="true"><use href="../assets/img/icons.svg?v=5db14437#mail"></use></svg>
+        <div class="contact-row__text">
+          <p class="contact-row__label">Email</p>
+          <noscript><p>Please call us for our email address.</p></noscript>
+          <div class="email-reveal" data-email hidden>
+            <div class="email-slide" data-email-slide>
+              <span class="email-slide__fill" aria-hidden="true"></span>
+              <span class="email-slide__hint" aria-hidden="true">Slide to reveal email</span>
+              <button class="email-slide__handle" type="button" aria-label="Reveal email address" data-email-handle>
+                <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8H13M9 12L13 8L9 4"/></svg>
+              </button>
+            </div>
+            <p class="email-reveal__address" data-email-address hidden><a class="link" data-email-link></a></p>
+          </div>
+        </div>
       </div>
       <div class="contact-row">
         <svg class="icon contact-row__icon" width="24" height="24" aria-hidden="true"><use href="../assets/img/icons.svg#location"></use></svg>

@@ -22,6 +22,23 @@
         <a class="btn btn--outline btn--sm" href="tel:+12504224262" aria-label="Call Skaha Lake Pharmacy"><span class="btn__label">Call</span></a>
       </div>
       <div class="contact-row">
+        <svg class="icon contact-row__icon" width="24" height="24" aria-hidden="true"><use href="{{root}}assets/img/icons.svg?v={{v}}#mail"></use></svg>
+        <div class="contact-row__text">
+          <p class="contact-row__label">Email</p>
+          <noscript><p>Please call us for our email address.</p></noscript>
+          <div class="email-reveal" data-email hidden>
+            <div class="email-slide" data-email-slide>
+              <span class="email-slide__fill" aria-hidden="true"></span>
+              <span class="email-slide__hint" aria-hidden="true">Slide to reveal email</span>
+              <button class="email-slide__handle" type="button" aria-label="Reveal email address" data-email-handle>
+                <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8H13M9 12L13 8L9 4"/></svg>
+              </button>
+            </div>
+            <p class="email-reveal__address" data-email-address hidden><a class="link" data-email-link></a></p>
+          </div>
+        </div>
+      </div>
+      <div class="contact-row">
         <svg class="icon contact-row__icon" width="24" height="24" aria-hidden="true"><use href="{{root}}assets/img/icons.svg#location"></use></svg>
         <div class="contact-row__text">
           <p class="contact-row__label">Location</p>

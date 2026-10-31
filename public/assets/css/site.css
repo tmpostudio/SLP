@@ -1887,6 +1887,100 @@ ol[role="list"] {
   }
 }
 
+/* Reserves the slider's height so the footer doesn't jump on reveal. */
+.email-reveal {
+  min-height: 44px;
+  margin-top: 4px;
+}
+
+.email-reveal[hidden],
+.email-reveal [hidden] { display: none; }
+
+.email-reveal__address {
+  margin-top: -4px;
+  line-height: 24px;
+}
+
+.email-slide {
+  --handle: 36px;
+  --inset: 4px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 211px;
+  height: 44px;
+  border-radius: var(--r-pill);
+  background: var(--blue-50);
+  box-shadow: inset 0 0 0 1px var(--blue-100);
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+  /* Vertical swipes still scroll the page; horizontal ones drive the slider. */
+  touch-action: pan-y;
+}
+
+.email-slide__fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: calc(var(--x, 0px) + var(--handle) + var(--inset) * 2);
+  border-radius: inherit;
+  background: var(--blue-100);
+  transition: width 0.5s var(--ease-out);
+}
+
+.email-slide__hint {
+  position: relative;
+  padding-left: calc(var(--handle) + var(--inset) + 12px);
+  font-size: 14px;
+  line-height: 20px;
+  white-space: nowrap;
+  color: var(--navy-600);
+  opacity: calc(1 - var(--p, 0) * 1.8);
+  transition: opacity 0.3s ease;
+}
+
+.email-slide__handle {
+  position: absolute;
+  left: var(--inset);
+  top: var(--inset);
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: var(--handle);
+  height: var(--handle);
+  aspect-ratio: 1;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  color: var(--white);
+  background: var(--navy-800);
+  cursor: inherit;
+  touch-action: inherit;
+  transform: translateX(var(--x, 0px));
+  transition: transform 0.5s var(--ease-spring), background-color 0.3s ease;
+}
+
+.email-slide__handle .arrow { transition: transform 0.5s var(--ease-spring); }
+
+.email-slide.is-dragging { cursor: grabbing; }
+
+.email-slide.is-dragging .email-slide__fill,
+.email-slide.is-dragging .email-slide__handle,
+.email-slide.is-dragging .email-slide__hint { transition: none; }
+
+.email-slide.is-done { cursor: default; }
+
+.email-slide.is-done .email-slide__fill,
+.email-slide.is-done .email-slide__handle { transition-timing-function: var(--ease-out); }
+
+@media (hover: hover) {
+  .email-slide:hover .email-slide__handle { background: var(--navy-700); }
+  .email-slide:hover .arrow { transform: translateX(2px); }
+}
+
 .footer__bar {
   display: flex;
   flex-wrap: wrap;

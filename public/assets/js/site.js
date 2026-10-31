@@ -177,6 +177,92 @@
     }, { once: true });
   });
 
+  /* Email: slide to reveal, so the address is never in the source ---------- */
+  // XOR-encoded to stay out of the HTML and the public repo. To change it, run:
+  // [...'new@address'].map((c) => c.charCodeAt(0) ^ 23)
+  const EMAIL = [116, 127, 118, 100, 114, 87, 100, 124, 118, 127, 118, 123, 118, 124, 114, 103, 127, 118, 101, 122, 118, 116, 110, 57, 116, 118];
+  const EMAIL_KEY = 'slp-email-revealed';
+
+  const emailRemembered = () => {
+    try { return sessionStorage.getItem(EMAIL_KEY) === '1'; } catch { return false; }
+  };
+
+  document.querySelectorAll('[data-email]').forEach((block) => {
+    const slide = block.querySelector('[data-email-slide]');
+    const handle = block.querySelector('[data-email-handle]');
+    const address = block.querySelector('[data-email-address]');
+    const link = block.querySelector('[data-email-link]');
+    let startX = 0, offset = 0, dragging = false, dragged = false;
+
+    const maxOffset = () => slide.clientWidth - handle.offsetWidth - handle.offsetLeft * 2;
+    const moveTo = (x) => {
+      offset = Math.min(Math.max(x, 0), maxOffset());
+      slide.style.setProperty('--x', `${offset}px`);
+      slide.style.setProperty('--p', offset / maxOffset());
+    };
+
+    const showAddress = () => {
+      const email = EMAIL.map((c) => String.fromCharCode(c ^ 23)).join('');
+      const hadFocus = document.activeElement === handle;
+      link.href = `mailto:${email}`;
+      link.textContent = email;
+      slide.hidden = true;
+      address.hidden = false;
+      if (hadFocus) link.focus({ preventScroll: true });
+    };
+
+    const reveal = () => {
+      if (slide.classList.contains('is-done')) return;
+      try { sessionStorage.setItem(EMAIL_KEY, '1'); } catch {}
+      slide.classList.add('is-done');
+      moveTo(maxOffset());
+      const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      setTimeout(showAddress, still ? 0 : 340);
+    };
+
+    slide.addEventListener('pointerdown', (e) => {
+      if (e.button !== 0 || slide.classList.contains('is-done')) return;
+      slide.setPointerCapture(e.pointerId);
+      startX = e.clientX;
+      dragging = true;
+      dragged = false;
+    });
+    slide.addEventListener('pointermove', (e) => {
+      if (!dragging) return;
+      const dx = e.clientX - startX;
+      if (!dragged && Math.abs(dx) < 4) return;
+      dragged = true;
+      slide.classList.add('is-dragging');
+      moveTo(dx);
+    });
+    const endDrag = () => {
+      if (!dragging) return;
+      dragging = false;
+      slide.classList.remove('is-dragging');
+      if (dragged && offset >= maxOffset() * 0.75) reveal();
+      else moveTo(0);
+    };
+    slide.addEventListener('pointerup', endDrag);
+    slide.addEventListener('pointercancel', () => { dragged = false; endDrag(); });
+    // Pointers must slide. Enter/Space on the handle (a click with detail 0) still reveals.
+    slide.addEventListener('click', (e) => {
+      if (e.detail === 0) reveal();
+    });
+
+    block.hidden = false;
+
+    // Stay revealed across pages, including prerendered and back/forward ones.
+    const restore = () => {
+      if (emailRemembered() && address.hidden) {
+        slide.classList.add('is-done');
+        showAddress();
+      }
+    };
+    restore();
+    window.addEventListener('pageshow', restore);
+    document.addEventListener('prerenderingchange', restore);
+  });
+
   /* Current year in the footer -------------------------------------------- */
   document.querySelectorAll('[data-year]').forEach((el) => (el.textContent = new Date().getFullYear()));
 
