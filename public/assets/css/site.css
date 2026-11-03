@@ -1914,6 +1914,19 @@ ol[role="list"] {
   color: var(--navy-800);
 }
 
+/* Outbound arrows (↗) loop diagonally instead of sideways */
+@keyframes arrow-out {
+  0% { transform: translate(0, 0); }
+  40% { transform: translate(130%, -130%); }
+  40.01% { transform: translate(-130%, 130%); }
+  100% { transform: translate(0, 0); }
+}
+
+@media (hover: hover) {
+  .btn:hover .arrow--out,
+  .service--cta:hover .arrow--out { animation-name: arrow-out; }
+}
+
 .service__more {
   display: inline-block;
   margin-top: 4px;
