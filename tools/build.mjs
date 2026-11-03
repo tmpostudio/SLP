@@ -11,6 +11,7 @@
 //   {{pageUrl}}      absolute URL of the current page
 //   {{year}}         current year
 //   {{v}}            short hash of site.css + site.js, for cache-busting
+//   {{bookLink}}     nav booking link: the minor ailments page, or the booking site once you're on it
 //   {{current:key}}  becomes aria-current="page" on the matching page
 // A line that uses {{siteUrl}} or {{pageUrl}} is dropped while siteUrl is empty.
 
@@ -41,6 +42,9 @@ function render(template, page) {
     year: String(new Date().getFullYear()),
     v: assetVersion,
   };
+  vars.bookLink = page.key === 'ailments'
+    ? 'href="https://www.bookapharmacist.gov.bc.ca/minorail/s/" target="_blank" rel="noopener"'
+    : `href="${vars.root}minor-ailments/"`;
   return template
     .split('\n')
     .filter((line) => siteUrl || !/\{\{(siteUrl|pageUrl)\}\}/.test(line))

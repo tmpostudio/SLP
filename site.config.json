@@ -4,6 +4,7 @@
     { "file": "index.html", "key": "home", "path": "" },
     { "file": "about/index.html", "key": "about", "path": "about/" },
     { "file": "order-online/index.html", "key": "order", "path": "order-online/" },
+    { "file": "minor-ailments/index.html", "key": "ailments", "path": "minor-ailments/" },
     { "file": "404.html", "key": "404", "path": "", "base": "/", "noindex": true }
   ]
 }

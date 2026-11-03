@@ -263,6 +263,14 @@
     document.addEventListener('prerenderingchange', restore);
   });
 
+  /* Minor ailments: open a condition when its link is followed --------------- */
+  const openFromHash = () => {
+    const target = location.hash.length > 1 && document.getElementById(location.hash.slice(1));
+    if (target && target.matches('details')) target.open = true;
+  };
+  openFromHash();
+  window.addEventListener('hashchange', openFromHash);
+
   /* Current year in the footer -------------------------------------------- */
   document.querySelectorAll('[data-year]').forEach((el) => (el.textContent = new Date().getFullYear()));
 
