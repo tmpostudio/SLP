@@ -25,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap">
-<link rel="stylesheet" href="../assets/css/site.css?v=0163f4e5">
+<link rel="stylesheet" href="../assets/css/site.css?v=762d85dd">
 <script>
   document.documentElement.classList.add('js');
   if (document.prerendering) {
@@ -33,7 +33,7 @@
     document.addEventListener('prerenderingchange', () => document.documentElement.classList.remove('is-prerendering'), { once: true });
   }
 </script>
-<script src="../assets/js/site.js?v=0163f4e5" defer></script>
+<script src="../assets/js/site.js?v=762d85dd" defer></script>
 <script type="speculationrules">
   { "prerender": [{ "where": { "href_matches": "/*" }, "eagerness": "moderate" }] }
 </script>
@@ -188,269 +188,60 @@
     <header class="section-head">
       <p class="brow" data-reveal>Check your symptoms</p>
       <h2 class="h2" id="list-title" data-reveal>Is your condition on the list?</h2>
-      <p class="lead" data-reveal>Open any condition to see the usual signs. If it sounds like what you’re dealing with, book an appointment and your pharmacist will take it from there.</p>
+      <p class="lead" data-reveal>If what you’re dealing with is on the list, book an appointment and your pharmacist will take it from there.</p>
     </header>
 
     <p class="ailments__alert" role="note" data-reveal><strong>Severe symptoms or an emergency?</strong> Call 9-1-1 or go to the nearest emergency department. For health advice any time, call HealthLink BC at <a class="link" href="tel:811">8-1-1</a>.</p>
 
     <div class="ailment-group" data-reveal>
       <h2 class="ailment-group__title">Skin conditions</h2>
-      <div class="ailment-list">
-        <details class="ailment" id="acne">
-          <summary><h3 class="ailment__title">Mild acne</h3><span class="ailment__icon" aria-hidden="true"></span></summary>
-          <div class="ailment__body">
-            <p>Clogged pores that keep breaking out on your face, chest or back.</p>
-            <ul>
-              <li>Blackheads or whiteheads</li>
-              <li>Small, red pimples, some with pus</li>
-            </ul>
-          </div>
-        </details>
-        <details class="ailment" id="fungal-infections">
-          <summary><h3 class="ailment__title">Fungal infections: athlete’s foot, jock itch, ringworm and nail fungus</h3><span class="ailment__icon" aria-hidden="true"></span></summary>
-          <div class="ailment__body">
-            <p>Fungus thrives on warm, damp skin and in nails. Where it shows up tells you which kind you may have.</p>
-            <ul>
-              <li><strong>Athlete’s foot:</strong> itchy, scaly or cracked skin that may blister, often between the toes</li>
-              <li><strong>Jock itch:</strong> an itchy, burning red rash with a clear edge on the groin or inner thigh</li>
-              <li><strong>Ringworm:</strong> a round, itchy red patch with a raised, scaly edge on the neck, body, arms or legs</li>
-              <li><strong>Nail fungus:</strong> thick, brittle, discoloured nails, usually starting at the tip</li>
-            </ul>
-          </div>
-        </details>
-        <details class="ailment" id="hives-itching">
-          <summary><h3 class="ailment__title">Hives, itching and bug bites (urticaria)</h3><span class="ailment__icon" aria-hidden="true"></span></summary>
-          <div class="ailment__body">
-            <p>Skin that flares up after a bite, a sting or contact with something that irritates it.</p>
-            <ul>
-              <li>Itchy, swollen bumps or blisters</li>
-              <li>A stinging or sharp, burning feeling</li>
-            </ul>
-            <p class="ailment__note">Swelling of the face or throat, or trouble breathing, is an emergency. Call 9-1-1.</p>
-          </div>
-        </details>
-        <details class="ailment" id="impetigo">
-          <summary><h3 class="ailment__title">Impetigo</h3><span class="ailment__icon" aria-hidden="true"></span></summary>
-          <div class="ailment__body">
-            <p>A contagious skin infection that’s especially common in children.</p>
-            <ul>
-              <li>Tiny blisters that leak, then dry into a yellow-brown crust</li>
-              <li>Usually found around the nose and mouth</li>
-              <li>More itchy than painful</li>
-            </ul>
-          </div>
-        </details>
-        <details class="ailment" id="shingles">
-          <summary><h3 class="ailment__title">Shingles</h3><span class="ailment__icon" aria-hidden="true"></span></summary>
-          <div class="ailment__body">
-            <p>A painful rash caused when the chickenpox virus wakes up again. Treatment works best when it starts early, so don’t wait.</p>
-            <ul>
-              <li>Burning, tingling, numbness or pain in one area, a few days before any rash</li>
-              <li>Painful blisters on one side of your body or face</li>
-            </ul>
-            <p class="ailment__note">If the rash is near your eye, get medical care right away.</p>
-          </div>
-        </details>
-        <details class="ailment" id="skin-rash-eczema">
-          <summary><h3 class="ailment__title">Skin rashes, eczema and dermatitis</h3><span class="ailment__icon" aria-hidden="true"></span></summary>
-          <div class="ailment__body">
-            <p>Covers eczema, diaper rash, and contact, allergic and seborrheic dermatitis.</p>
-            <ul>
-              <li>Dry, red skin that itches</li>
-              <li>Scaly or patchy areas</li>
-              <li>Cracked skin or blisters that ooze</li>
-            </ul>
-          </div>
-        </details>
-      </div>
+      <ul class="ailment-list" role="list">
+        <li class="ailment-item" id="acne"><h3 class="ailment__title">Mild acne</h3></li>
+        <li class="ailment-item" id="fungal-infections"><h3 class="ailment__title">Fungal infections: athlete’s foot, jock itch, ringworm and nail fungus</h3></li>
+        <li class="ailment-item" id="hives-itching"><h3 class="ailment__title">Hives, itching and bug bites (urticaria)</h3></li>
+        <li class="ailment-item" id="impetigo"><h3 class="ailment__title">Impetigo</h3></li>
+        <li class="ailment-item" id="shingles"><h3 class="ailment__title">Shingles</h3></li>
+        <li class="ailment-item" id="skin-rash-eczema"><h3 class="ailment__title">Skin rashes, eczema and dermatitis</h3></li>
+      </ul>
     </div>
 
     <div class="ailment-group" data-reveal>
       <h2 class="ailment-group__title">Allergies, mouth and eye conditions</h2>
-      <div class="ailment-list">
-        <details class="ailment" id="allergies-hay-fever">
-          <summary><h3 class="ailment__title">Allergies and hay fever (allergic rhinitis)</h3><span class="ailment__icon" aria-hidden="true"></span></summary>
-          <div class="ailment__body">
-            <p>Your nose and eyes reacting to things like pollen, dust or pets, rather than a cold or flu.</p>
-            <ul>
-              <li>Sneezing</li>
-              <li>A stuffy nose, or a runny one with clear, watery mucus</li>
-              <li>Itchy eyes, nose or throat</li>
-            </ul>
-          </div>
-        </details>
-        <details class="ailment" id="canker-sores">
-          <summary><h3 class="ailment__title">Canker sores (mouth ulcers)</h3><span class="ailment__icon" aria-hidden="true"></span></summary>
-          <div class="ailment__body">
-            <p>Small sores inside the mouth that tend to come back. They aren’t contagious.</p>
-            <ul>
-              <li>Shallow, painful sores on your tongue or the inside of your cheek or lip</li>
-              <li>A white or yellow centre with a red edge</li>
-            </ul>
-          </div>
-        </details>
-        <details class="ailment" id="cold-sores">
-          <summary><h3 class="ailment__title">Cold sores</h3><span class="ailment__icon" aria-hidden="true"></span></summary>
-          <div class="ailment__body">
-            <p>Blisters on the lip caused by a common virus. Treatment works best at the first tingle.</p>
-            <ul>
-              <li>Tingling, itching or burning at the edge of your lip</li>
-              <li>A cluster of painful, fluid-filled blisters, usually within a day</li>
-              <li>Blisters that break, crust over and clear up in 7 to 10 days</li>
-            </ul>
-          </div>
-        </details>
-        <details class="ailment" id="pink-eye">
-          <summary><h3 class="ailment__title">Pink eye (conjunctivitis)</h3><span class="ailment__icon" aria-hidden="true"></span></summary>
-          <div class="ailment__body">
-            <p>Irritation or infection of the thin layer covering the white of your eye.</p>
-            <ul>
-              <li>One or both eyes look red</li>
-              <li>Watery or thick discharge that’s white, yellow or green</li>
-              <li>Itching, burning or a gritty feeling, like something is in your eye</li>
-            </ul>
-            <p class="ailment__note">Severe eye pain or changes in your vision need urgent care.</p>
-          </div>
-        </details>
-        <details class="ailment" id="thrush">
-          <summary><h3 class="ailment__title">Oral thrush</h3><span class="ailment__icon" aria-hidden="true"></span></summary>
-          <div class="ailment__body">
-            <p>A yeast infection inside the mouth.</p>
-            <ul>
-              <li>Creamy white patches on your tongue, lips, or the inside or roof of your mouth</li>
-              <li>Patches that look a bit like cottage cheese and can be scraped off</li>
-              <li>A dry mouth or less sense of taste</li>
-            </ul>
-          </div>
-        </details>
-      </div>
+      <ul class="ailment-list" role="list">
+        <li class="ailment-item" id="allergies-hay-fever"><h3 class="ailment__title">Allergies and hay fever (allergic rhinitis)</h3></li>
+        <li class="ailment-item" id="canker-sores"><h3 class="ailment__title">Canker sores (mouth ulcers)</h3></li>
+        <li class="ailment-item" id="cold-sores"><h3 class="ailment__title">Cold sores</h3></li>
+        <li class="ailment-item" id="pink-eye"><h3 class="ailment__title">Pink eye (conjunctivitis)</h3></li>
+        <li class="ailment-item" id="thrush"><h3 class="ailment__title">Oral thrush</h3></li>
+      </ul>
     </div>
 
     <div class="ailment-group" data-reveal>
       <h2 class="ailment-group__title">Stomach and digestive issues</h2>
-      <div class="ailment-list">
-        <details class="ailment" id="heartburn-acid-reflux">
-          <summary><h3 class="ailment__title">Heartburn and acid reflux (GERD)</h3><span class="ailment__icon" aria-hidden="true"></span></summary>
-          <div class="ailment__body">
-            <p>Stomach acid moving up where it shouldn’t.</p>
-            <ul>
-              <li>A burning feeling that rises from your stomach or lower chest toward your neck</li>
-              <li>Burping, or acid coming up into your mouth</li>
-            </ul>
-            <p class="ailment__note">Chest pain with shortness of breath, sweating or pain in your arm or jaw could be a heart attack. Call 9-1-1.</p>
-          </div>
-        </details>
-        <details class="ailment" id="hemorrhoids">
-          <summary><h3 class="ailment__title">Hemorrhoids</h3><span class="ailment__icon" aria-hidden="true"></span></summary>
-          <div class="ailment__body">
-            <p>Swollen veins around the anus. Common, and nothing to be embarrassed about.</p>
-            <ul>
-              <li>Itching, burning or swelling, with or without pain</li>
-              <li>A lump you can feel around the anus</li>
-              <li>A little bright red blood on the toilet paper or in the bowl</li>
-            </ul>
-          </div>
-        </details>
-        <details class="ailment" id="pinworms">
-          <summary><h3 class="ailment__title">Pinworms (threadworms)</h3><span class="ailment__icon" aria-hidden="true"></span></summary>
-          <div class="ailment__body">
-            <p>Tiny intestinal worms that spread easily, especially among kids and within households. Some people have no symptoms.</p>
-            <ul>
-              <li>An itchy bottom</li>
-              <li>Belly pain</li>
-            </ul>
-            <p>Your pharmacist may check by looking, or by using a piece of tape to pick up eggs.</p>
-          </div>
-        </details>
-        <details class="ailment" id="upset-stomach">
-          <summary><h3 class="ailment__title">Upset stomach and indigestion</h3><span class="ailment__icon" aria-hidden="true"></span></summary>
-          <div class="ailment__body">
-            <p>Discomfort in your upper belly, often during or after a meal.</p>
-            <ul>
-              <li>Bloating, nausea or stomach discomfort</li>
-              <li>Feeling full soon after you start eating</li>
-              <li>Heartburn, or burping up gas, acid or food</li>
-            </ul>
-          </div>
-        </details>
-      </div>
+      <ul class="ailment-list" role="list">
+        <li class="ailment-item" id="heartburn-acid-reflux"><h3 class="ailment__title">Heartburn and acid reflux (GERD)</h3></li>
+        <li class="ailment-item" id="hemorrhoids"><h3 class="ailment__title">Hemorrhoids</h3></li>
+        <li class="ailment-item" id="pinworms"><h3 class="ailment__title">Pinworms (threadworms)</h3></li>
+        <li class="ailment-item" id="upset-stomach"><h3 class="ailment__title">Upset stomach and indigestion</h3></li>
+      </ul>
     </div>
 
     <div class="ailment-group" data-reveal>
       <h2 class="ailment-group__title">Urinary and reproductive health</h2>
-      <div class="ailment-list">
-        <details class="ailment" id="menstrual-pain">
-          <summary><h3 class="ailment__title">Menstrual cramps and period pain</h3><span class="ailment__icon" aria-hidden="true"></span></summary>
-          <div class="ailment__body">
-            <p>Pain that comes with your cycle.</p>
-            <ul>
-              <li>Cramps or pain in your lower belly</li>
-              <li>Lower back pain before or during your period</li>
-            </ul>
-          </div>
-        </details>
-        <details class="ailment" id="uti">
-          <summary><h3 class="ailment__title">Urinary tract infection (UTI)</h3><span class="ailment__icon" aria-hidden="true"></span></summary>
-          <div class="ailment__body">
-            <p>Pharmacists can assess and treat uncomplicated bladder infections.</p>
-            <ul>
-              <li>Pain when you pee</li>
-              <li>Trouble holding it in</li>
-              <li>Urine that’s cloudy or smells bad</li>
-            </ul>
-            <p class="ailment__note">If you’re pregnant or male, or your UTI is complicated, please see a physician or nurse practitioner instead.</p>
-          </div>
-        </details>
-        <details class="ailment" id="yeast-infection">
-          <summary><h3 class="ailment__title">Vaginal yeast infection (candidiasis)</h3><span class="ailment__icon" aria-hidden="true"></span></summary>
-          <div class="ailment__body">
-            <p>An overgrowth of yeast in the vagina.</p>
-            <ul>
-              <li>Itching, irritation and redness</li>
-              <li>White discharge that looks like cottage cheese</li>
-            </ul>
-          </div>
-        </details>
-      </div>
+      <ul class="ailment-list" role="list">
+        <li class="ailment-item" id="menstrual-pain"><h3 class="ailment__title">Menstrual cramps and period pain</h3></li>
+        <li class="ailment-item" id="uti"><h3 class="ailment__title">Urinary tract infection (UTI)</h3></li>
+        <li class="ailment-item" id="yeast-infection"><h3 class="ailment__title">Vaginal yeast infection (candidiasis)</h3></li>
+      </ul>
     </div>
 
     <div class="ailment-group" data-reveal>
       <h2 class="ailment-group__title">Pain, injuries and quitting smoking</h2>
-      <div class="ailment-list">
-        <details class="ailment" id="headaches">
-          <summary><h3 class="ailment__title">Headaches</h3><span class="ailment__icon" aria-hidden="true"></span></summary>
-          <div class="ailment__body">
-            <p>The everyday kind, not the kind that comes on suddenly and severely.</p>
-            <ul>
-              <li>Mild to moderate pain or tightness across your forehead and the sides of your head</li>
-              <li>No nausea or vomiting</li>
-            </ul>
-            <p class="ailment__note">A sudden, severe headache is an emergency. Call 9-1-1.</p>
-          </div>
-        </details>
-        <details class="ailment" id="nicotine-dependence">
-          <summary><h3 class="ailment__title">Nicotine dependence and quitting smoking</h3><span class="ailment__icon" aria-hidden="true"></span></summary>
-          <div class="ailment__body">
-            <p>Ready to quit cigarettes or other tobacco? Your pharmacist can help you get started.</p>
-            <ul>
-              <li>A free 12-week course of nicotine patches, gum or lozenges, covered by BC PharmaCare</li>
-              <li>Prescription options, varenicline or bupropion, also covered by BC PharmaCare</li>
-            </ul>
-            <p>Registering for Fair PharmaCare online or by phone gets you covered right away.</p>
-          </div>
-        </details>
-        <details class="ailment" id="sprains-strains">
-          <summary><h3 class="ailment__title">Sprains and strains</h3><span class="ailment__icon" aria-hidden="true"></span></summary>
-          <div class="ailment__body">
-            <p>Mild to moderate injuries from overdoing it or straining a joint or muscle.</p>
-            <ul>
-              <li>Pain, tenderness or swelling</li>
-              <li>Redness or bruising</li>
-              <li>Weak muscles or trouble moving the area normally</li>
-            </ul>
-          </div>
-        </details>
-      </div>
+      <ul class="ailment-list" role="list">
+        <li class="ailment-item" id="headaches"><h3 class="ailment__title">Headaches</h3></li>
+        <li class="ailment-item" id="nicotine-dependence"><h3 class="ailment__title">Nicotine dependence and quitting smoking</h3></li>
+        <li class="ailment-item" id="sprains-strains"><h3 class="ailment__title">Sprains and strains</h3></li>
+      </ul>
     </div>
   </section>
 
@@ -549,7 +340,7 @@
         <a class="btn btn--outline btn--sm" href="tel:+12504224262" aria-label="Call Skaha Lake Pharmacy"><span class="btn__label">Call</span></a>
       </div>
       <div class="contact-row">
-        <svg class="icon contact-row__icon" width="24" height="24" aria-hidden="true"><use href="../assets/img/icons.svg?v=0163f4e5#mail"></use></svg>
+        <svg class="icon contact-row__icon" width="24" height="24" aria-hidden="true"><use href="../assets/img/icons.svg?v=762d85dd#mail"></use></svg>
         <div class="contact-row__text">
           <p class="contact-row__label">Email</p>
           <noscript><p>Please call us for our email address.</p></noscript>

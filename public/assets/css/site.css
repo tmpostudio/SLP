@@ -1807,6 +1807,18 @@ ol[role="list"] {
 
 .ailment-list { border-top: 1px solid var(--blue-100); }
 
+ul.ailment-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ailment-item {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--blue-100);
+  scroll-margin-top: var(--header-offset);
+}
+
 .ailment {
   border-bottom: 1px solid var(--blue-100);
   scroll-margin-top: var(--header-offset);
